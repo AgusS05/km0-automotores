@@ -123,3 +123,22 @@ Elegimos React + TypeScript para el frontend porque es la tecnología que mejor 
 /docs            → informes y avances de entregas
 README.md        → instrucciones de instalación, stack, integrantes
 ```
+
+## 9. Listado de módulos a desarrollar (Segunda Entrega)
+
+| # | Módulo | Qué hace | Entidades principales |
+|---|---|---|---|
+| 1 | Autenticación y usuarios | Registro/login, roles (cliente, vendedor, admin, instructor) | `usuario` |
+| 2 | Catálogo | ABM de marcas, modelos y versiones; listado público con fichas | `marca`, `modelo`, `version` |
+| 3 | Sucursales y stock demo | ABM de sucursales y de vehículos demo disponibles | `sucursal`, `vehiculo_demo` |
+| 4 | Reserva de test drive | Selección de vehículo/horario, validación de superposición, cambio de estado del turno | `turno_test_drive` |
+| 5 | Panel de administración | Vista consolidada de turnos y carga de disponibilidad para vendedores/admin | `turno_test_drive`, `usuario`, `vehiculo_demo` |
+| 6 | Métricas y alertas (valor agregado) | Dashboard de turnos por modelo, tasa de no-shows, recordatorio automático | `turno_test_drive` |
+| 7 | Escuela de manejo *(extensión)* | Reserva de clases con instructor, si el cronograma lo permite | `clase_manejo`, `usuario` |
+
+---
+
+## 10. Estado de aprobación
+
+- [ ] Aprobado por el tutor (Sergio Andrés Antonini)
+- [ ] Aprobado por el comité de trabajo final
