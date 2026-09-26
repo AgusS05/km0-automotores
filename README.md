@@ -124,6 +124,104 @@ Elegimos React + TypeScript para el frontend porque es la tecnología que mejor 
 README.md        → instrucciones de instalación, stack, integrantes
 ```
 
+---
+
+## 8. Esquema de la base de datos (Segunda Entrega)
+
+Base de datos relacional en PostgreSQL. Diagrama entidad-relación:
+
+```mermaid
+erDiagram
+    MARCA ||--o{ MODELO : tiene
+    MODELO ||--o{ VERSION : tiene
+    VERSION ||--o{ VEHICULO_DEMO : "unidad física"
+    SUCURSAL ||--o{ VEHICULO_DEMO : aloja
+    SUCURSAL ||--o{ USUARIO : "asignado a (vendedor/instructor)"
+    USUARIO ||--o{ TURNO_TEST_DRIVE : "reserva (cliente)"
+    USUARIO ||--o{ TURNO_TEST_DRIVE : "atiende (vendedor)"
+    VEHICULO_DEMO ||--o{ TURNO_TEST_DRIVE : "se reserva"
+    USUARIO ||--o{ CLASE_MANEJO : "reserva (cliente)"
+    USUARIO ||--o{ CLASE_MANEJO : "dicta (instructor)"
+
+    MARCA {
+        int id PK
+        string nombre
+    }
+    MODELO {
+        int id PK
+        int marca_id FK
+        string nombre
+        string tipo_carroceria
+        int anio
+    }
+    VERSION {
+        int id PK
+        int modelo_id FK
+        string nombre_version
+        numeric precio
+        string motor
+        string transmision
+        string combustible
+    }
+    SUCURSAL {
+        int id PK
+        string nombre
+        string direccion
+        string ciudad
+    }
+    USUARIO {
+        int id PK
+        string nombre
+        string apellido
+        string email
+        string rol
+        int sucursal_id FK
+    }
+    VEHICULO_DEMO {
+        int id PK
+        int version_id FK
+        int sucursal_id FK
+        string patente
+        boolean disponible
+    }
+    TURNO_TEST_DRIVE {
+        int id PK
+        int cliente_id FK
+        int vehiculo_demo_id FK
+        int vendedor_id FK
+        date fecha
+        time hora_inicio
+        time hora_fin
+        string estado
+    }
+    CLASE_MANEJO {
+        int id PK
+        int cliente_id FK
+        int instructor_id FK
+        date fecha
+        time hora_inicio
+        time hora_fin
+        string estado
+    }
+```
+
+### Descripción de entidades
+
+| Entidad | Descripción |
+|---|---|
+| `marca` | Marcas que vende la concesionaria |
+| `modelo` | Modelos de cada marca |
+| `version` | Versión/trim específica de un modelo, con precio y ficha técnica |
+| `sucursal` | Sucursales físicas de la concesionaria |
+| `usuario` | Clientes, vendedores, administradores e instructores, diferenciados por `rol` |
+| `vehiculo_demo` | Unidad física disponible para test drive, ligada a una versión y una sucursal |
+| `turno_test_drive` | Reserva de test drive: cliente, vehículo demo, vendedor, fecha/horario y estado |
+| `clase_manejo` | Reserva de clase de manejo con un instructor (módulo extensión) |
+
+La restricción `UNIQUE (vehiculo_demo_id, fecha, hora_inicio)` sobre `turno_test_drive` (ver `database/schema.sql`) garantiza a nivel de base de datos que dos personas no puedan reservar el mismo auto en el mismo horario — el punto de integridad transaccional que justificó elegir PostgreSQL.
+
+---
+
 ## 9. Listado de módulos a desarrollar (Segunda Entrega)
 
 | # | Módulo | Qué hace | Entidades principales |
