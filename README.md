@@ -143,7 +143,3 @@ Resumen rápido: base de datos relacional en PostgreSQL con 8 entidades (`marca`
 - [ ] Aprobado por el tutor (Sergio Andrés Antonini)
 - [ ] Aprobado por el comité de trabajo final
 
-## 10. Estado de aprobación
-
-- [ ] Aprobado por el tutor (Sergio Andrés Antonini)
-- [ ] Aprobado por el comité de trabajo final
