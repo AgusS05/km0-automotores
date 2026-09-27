@@ -117,124 +117,31 @@ Elegimos React + TypeScript para el frontend porque es la tecnología que mejor 
 ## 7. Organización del repositorio
 
 ```
-/frontend        → React + TypeScript
-/backend         → Spring Boot + Spring Data JPA (Java)
-/database        → scripts DDL/DML y diagrama ER
-/docs            → informes y avances de entregas
-README.md        → instrucciones de instalación, stack, integrantes
+/frontend        → React + TypeScript (Vite) — estructura inicial
+/backend         → Spring Boot + Spring Data JPA (Java) — estructura inicial
+/database        → schema.sql (DDL) con tablas, relaciones e índices
+/docs            → diagrama ER, listado de módulos y arquitectura del proyecto
+README.md        → este archivo: propuesta, stack, integrantes y estado
 ```
 
 ---
 
-## 8. Esquema de la base de datos (Segunda Entrega)
+## 8. Diseño técnico (Segunda Entrega)
 
-Base de datos relacional en PostgreSQL. Diagrama entidad-relación:
+La documentación técnica completa de esta entrega está en `/docs`, para no duplicar contenido extenso en este README:
 
-```mermaid
-erDiagram
-    MARCA ||--o{ MODELO : tiene
-    MODELO ||--o{ VERSION : tiene
-    VERSION ||--o{ VEHICULO_DEMO : "unidad física"
-    SUCURSAL ||--o{ VEHICULO_DEMO : aloja
-    SUCURSAL ||--o{ USUARIO : "asignado a (vendedor/instructor)"
-    USUARIO ||--o{ TURNO_TEST_DRIVE : "reserva (cliente)"
-    USUARIO ||--o{ TURNO_TEST_DRIVE : "atiende (vendedor)"
-    VEHICULO_DEMO ||--o{ TURNO_TEST_DRIVE : "se reserva"
-    USUARIO ||--o{ CLASE_MANEJO : "reserva (cliente)"
-    USUARIO ||--o{ CLASE_MANEJO : "dicta (instructor)"
+- **[`docs/esquema_bd_y_modulos.md`](./docs/esquema_bd_y_modulos.md)** → Diagrama entidad-relación completo (campos, tipos de datos, claves primarias y foráneas), restricciones e índices principales, y el listado de los 7 módulos a desarrollar con su prioridad.
+- **[`docs/arquitectura.md`](./docs/arquitectura.md)** → Arquitectura en capas elegida (Controller → Service → Repository), tecnologías definitivas y justificación de las decisiones técnicas.
+- **`database/schema.sql`** → Script DDL ejecutable con las 8 tablas, restricciones `UNIQUE` (para que no se pisen dos turnos del mismo vehículo u instructor) e índices sobre las claves foráneas.
 
-    MARCA {
-        int id PK
-        string nombre
-    }
-    MODELO {
-        int id PK
-        int marca_id FK
-        string nombre
-        string tipo_carroceria
-        int anio
-    }
-    VERSION {
-        int id PK
-        int modelo_id FK
-        string nombre_version
-        numeric precio
-        string motor
-        string transmision
-        string combustible
-    }
-    SUCURSAL {
-        int id PK
-        string nombre
-        string direccion
-        string ciudad
-    }
-    USUARIO {
-        int id PK
-        string nombre
-        string apellido
-        string email
-        string rol
-        int sucursal_id FK
-    }
-    VEHICULO_DEMO {
-        int id PK
-        int version_id FK
-        int sucursal_id FK
-        string patente
-        boolean disponible
-    }
-    TURNO_TEST_DRIVE {
-        int id PK
-        int cliente_id FK
-        int vehiculo_demo_id FK
-        int vendedor_id FK
-        date fecha
-        time hora_inicio
-        time hora_fin
-        string estado
-    }
-    CLASE_MANEJO {
-        int id PK
-        int cliente_id FK
-        int instructor_id FK
-        date fecha
-        time hora_inicio
-        time hora_fin
-        string estado
-    }
-```
-
-### Descripción de entidades
-
-| Entidad | Descripción |
-|---|---|
-| `marca` | Marcas que vende la concesionaria |
-| `modelo` | Modelos de cada marca |
-| `version` | Versión/trim específica de un modelo, con precio y ficha técnica |
-| `sucursal` | Sucursales físicas de la concesionaria |
-| `usuario` | Clientes, vendedores, administradores e instructores, diferenciados por `rol` |
-| `vehiculo_demo` | Unidad física disponible para test drive, ligada a una versión y una sucursal |
-| `turno_test_drive` | Reserva de test drive: cliente, vehículo demo, vendedor, fecha/horario y estado |
-| `clase_manejo` | Reserva de clase de manejo con un instructor (módulo extensión) |
-
-La restricción `UNIQUE (vehiculo_demo_id, fecha, hora_inicio)` sobre `turno_test_drive` (ver `database/schema.sql`) garantiza a nivel de base de datos que dos personas no puedan reservar el mismo auto en el mismo horario — el punto de integridad transaccional que justificó elegir PostgreSQL.
+Resumen rápido: base de datos relacional en PostgreSQL con 8 entidades (`marca`, `modelo`, `version`, `sucursal`, `usuario`, `vehiculo_demo`, `turno_test_drive`, `clase_manejo`); arquitectura en capas con frontend y backend desacoplados vía API REST.
 
 ---
 
-## 9. Listado de módulos a desarrollar (Segunda Entrega)
+## 9. Estado de aprobación
 
-| # | Módulo | Qué hace | Entidades principales |
-|---|---|---|---|
-| 1 | Autenticación y usuarios | Registro/login, roles (cliente, vendedor, admin, instructor) | `usuario` |
-| 2 | Catálogo | ABM de marcas, modelos y versiones; listado público con fichas | `marca`, `modelo`, `version` |
-| 3 | Sucursales y stock demo | ABM de sucursales y de vehículos demo disponibles | `sucursal`, `vehiculo_demo` |
-| 4 | Reserva de test drive | Selección de vehículo/horario, validación de superposición, cambio de estado del turno | `turno_test_drive` |
-| 5 | Panel de administración | Vista consolidada de turnos y carga de disponibilidad para vendedores/admin | `turno_test_drive`, `usuario`, `vehiculo_demo` |
-| 6 | Métricas y alertas (valor agregado) | Dashboard de turnos por modelo, tasa de no-shows, recordatorio automático | `turno_test_drive` |
-| 7 | Escuela de manejo *(extensión)* | Reserva de clases con instructor, si el cronograma lo permite | `clase_manejo`, `usuario` |
-
----
+- [ ] Aprobado por el tutor (Sergio Andrés Antonini)
+- [ ] Aprobado por el comité de trabajo final
 
 ## 10. Estado de aprobación
 
