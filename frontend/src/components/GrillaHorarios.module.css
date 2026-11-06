@@ -1,0 +1,18 @@
+.resumen { font-size: var(--t-sm); color: var(--c-texto-2); margin-bottom: var(--e-2); }
+.motivo { padding: var(--e-3) var(--e-4); background: var(--c-hormigon-2); border-radius: var(--r-s); color: var(--c-texto-2); }
+.grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: var(--e-2); }
+.horario {
+  display: grid; justify-items: start; gap: 0;
+  padding: var(--e-2) var(--e-3);
+  background: var(--c-papel);
+  border: 1px solid var(--c-linea); border-left: 4px solid var(--c-libre);
+  border-radius: var(--r-s);
+  cursor: pointer; text-align: left;
+}
+.horario:hover:not(:disabled) { border-color: var(--c-asfalto); border-left-color: var(--c-libre); }
+.horario[aria-checked='true'] { background: var(--c-patente); border-color: var(--c-patente); color: #fff; }
+.horario[aria-checked='true'] .estado { color: #d6defa; }
+.horario:disabled { cursor: not-allowed; background: transparent; border-left-color: var(--c-linea); color: #9aa3ad; }
+.hora { font-family: var(--f-display); font-size: 1.3rem; font-weight: 700; line-height: 1.1; }
+.estado { font-size: var(--t-xs); color: var(--c-libre); font-weight: 600; }
+.horario:disabled .estado { color: #9aa3ad; font-weight: 400; }

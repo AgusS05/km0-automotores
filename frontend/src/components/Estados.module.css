@@ -1,0 +1,29 @@
+.cargando {
+  display: flex; align-items: center; gap: var(--e-3);
+  padding: var(--e-6) 0; color: var(--c-texto-2);
+}
+/* línea de ruta discontinua que avanza */
+.ruta {
+  width: 56px; height: 4px; border-radius: 2px;
+  background: repeating-linear-gradient(90deg, var(--c-senal) 0 12px, transparent 12px 20px);
+  background-size: 40px 4px;
+  animation: avanzar 600ms linear infinite;
+}
+@keyframes avanzar { to { background-position: 40px 0; } }
+
+.error {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-3);
+  padding: var(--e-4); border-left: 4px solid var(--c-error);
+  background: var(--c-error-claro); color: var(--c-error); border-radius: var(--r-s);
+}
+.vacio {
+  display: grid; gap: var(--e-3); justify-items: start;
+  padding: var(--e-6); background: var(--c-papel); border: 1px dashed var(--c-linea); border-radius: var(--r-m);
+}
+.vacio h3 { font-size: var(--t-md); }
+.vacio p { color: var(--c-texto-2); }
+
+.aviso { padding: var(--e-3) var(--e-4); border-radius: var(--r-s); border-left: 4px solid; }
+.avisoInfo { background: var(--c-patente-claro); border-color: var(--c-patente); }
+.avisoOk { background: var(--c-libre-claro); border-color: var(--c-libre); color: #0f5132; }
+.avisoError { background: var(--c-error-claro); border-color: var(--c-error); color: var(--c-error); }

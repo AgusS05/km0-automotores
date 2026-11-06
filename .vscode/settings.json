@@ -1,0 +1,8 @@
+{
+  // La extensión de Java (Eclipse JDT) activa por defecto el análisis de nulos basado en las
+  // anotaciones de Spring (@NonNull/@Nullable) y marca cientos de avisos "Null type safety"
+  // que no son errores: el código compila y corre igual. Se desactiva para que el panel de
+  // Problemas muestre solo lo que importa.
+  "java.compile.nullAnalysis.mode": "disabled",
+  "java.configuration.updateBuildConfiguration": "automatic"
+}

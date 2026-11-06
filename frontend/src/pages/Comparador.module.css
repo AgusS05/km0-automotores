@@ -1,0 +1,13 @@
+.pagina { padding-top: var(--e-6); }
+.encabezado { display: grid; gap: var(--e-2); margin-bottom: var(--e-6); }
+.bajada { color: var(--c-texto-2); max-width: 60ch; }
+.tabla { font-size: var(--t-base); table-layout: fixed; min-width: 720px; }
+.esquina { width: 150px; }
+.columna { vertical-align: top; font-weight: 400; color: var(--c-texto); }
+.cabecera { display: grid; gap: 2px; margin-top: var(--e-3); }
+.cabecera > div { border-radius: var(--r-s); margin-bottom: var(--e-2); }
+.modelo { font-size: var(--t-sm); color: var(--c-texto-2); }
+.version { font-family: var(--f-display); font-size: var(--t-lg); font-weight: 600; color: var(--c-asfalto); line-height: 1.05; }
+.etiqueta { color: var(--c-texto-2); font-weight: 600; }
+.mejor { background: var(--c-libre-claro); }
+.marcaMejor { display: block; font-size: var(--t-xs); color: var(--c-libre); font-weight: 600; }

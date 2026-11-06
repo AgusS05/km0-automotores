@@ -1,0 +1,10 @@
+.selector { display: flex; align-items: center; gap: var(--e-3); flex-wrap: wrap; }
+.muestras { display: flex; gap: var(--e-2); }
+.muestra {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 2px solid #fff; box-shadow: 0 0 0 1px var(--c-linea);
+  cursor: pointer; padding: 0;
+}
+.muestra:hover { box-shadow: 0 0 0 1px var(--c-asfalto); }
+.activa { box-shadow: 0 0 0 2px var(--c-asfalto); }
+.nombre { font-size: var(--t-sm); color: var(--c-texto-2); min-width: 9ch; }

@@ -1,0 +1,24 @@
+.pagina {
+  padding-top: var(--e-7);
+  display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 360px); gap: var(--e-6);
+  justify-content: center; align-items: start;
+}
+/* Registro no tiene panel lateral: el formulario va centrado */
+.pagina > :only-child { grid-column: 1 / -1; justify-self: center; width: 100%; max-width: 440px; }
+.formulario {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--e-4);
+  padding: var(--e-6); background: var(--c-papel); border-radius: var(--r-m); border-top: 4px solid var(--c-asfalto);
+}
+.bajada { color: var(--c-texto-2); }
+.fila { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--e-3); }
+.alternativa { font-size: var(--t-sm); color: var(--c-texto-2); }
+.demo { display: grid; gap: var(--e-3); padding: var(--e-5); border: 1px dashed var(--c-linea); border-radius: var(--r-m); }
+.demo h2 { font-size: var(--t-lg); }
+.demo p { font-size: var(--t-sm); color: var(--c-texto-2); }
+.demo code { background: var(--c-hormigon-2); padding: 1px 6px; border-radius: 3px; color: var(--c-asfalto); }
+.demo ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-2); }
+.demo li { display: grid; }
+.demo li > span { font-size: var(--t-xs); color: var(--c-texto-2); padding-left: var(--e-2); }
+.demo :global(.btn--fantasma) { justify-content: flex-start; }
+@media (max-width: 860px) { .pagina { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .fila { grid-template-columns: 1fr; } .formulario { padding: var(--e-5) var(--e-4); } }

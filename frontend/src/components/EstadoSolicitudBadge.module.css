@@ -1,0 +1,9 @@
+.badge {
+  display: inline-block; padding: 1px var(--e-2); border-radius: var(--r-s);
+  font-size: var(--t-xs); font-weight: 600; white-space: nowrap; border: 1px solid transparent;
+}
+.nueva { background: var(--c-alerta-claro); color: var(--c-alerta); border-color: #f2d58a; }
+.contactada { background: var(--c-patente-claro); color: var(--c-patente); border-color: #c3cdee; }
+.reservada { background: var(--c-asfalto); color: #fff; }
+.vendida { background: var(--c-libre-claro); color: var(--c-libre); border-color: #b9e0ca; }
+.descartada { background: var(--c-hormigon-2); color: var(--c-texto-2); border-color: var(--c-linea); }

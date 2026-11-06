@@ -1,0 +1,57 @@
+/*
+  Km0 Automotores — tokens de diseño
+  Idea: el sitio es el piso de un showroom (grises de hormigón, fríos y neutros)
+  y el auto es el que pone el color. Tipografía de cartel vial (Barlow, inspirada
+  en la señalética de rutas), azul de patente Mercosur para las acciones y el
+  amarillo de la línea de ruta solo en el odómetro del logo (Km0 = cuentakilómetros en cero).
+*/
+:root {
+  /* Color */
+  --c-asfalto: #1c2430;
+  --c-asfalto-2: #2b3646;
+  --c-hormigon: #eceff2;
+  --c-hormigon-2: #e1e5ea;
+  --c-papel: #ffffff;
+  --c-linea: #d3d9e0;
+  --c-texto: #18202a;
+  --c-texto-2: #525d6b;
+  --c-patente: #1f3a93;
+  --c-patente-oscuro: #172c70;
+  --c-patente-claro: #e3e8f7;
+  --c-senal: #f5c518;
+  --c-libre: #17784a;
+  --c-libre-claro: #e0f2e8;
+  --c-alerta: #9a4a07;
+  --c-alerta-claro: #fdf0c8;
+  --c-error: #b42318;
+  --c-error-claro: #fde8e6;
+
+  /* Tipografía */
+  --f-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --f-texto: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --t-xs: 0.8125rem;
+  --t-sm: 0.875rem;
+  --t-base: 1rem;
+  --t-md: 1.25rem;
+  --t-lg: 1.5625rem;
+  --t-xl: 1.953rem;
+  --t-2xl: 2.441rem;
+  --t-3xl: 3.052rem;
+
+  /* Espacio (base 4px) */
+  --e-1: 0.25rem;
+  --e-2: 0.5rem;
+  --e-3: 0.75rem;
+  --e-4: 1rem;
+  --e-5: 1.5rem;
+  --e-6: 2rem;
+  --e-7: 3rem;
+  --e-8: 4.5rem;
+
+  /* Forma */
+  --r-s: 4px;
+  --r-m: 8px;
+  --ancho-max: 1240px;
+  --alto-header: 64px;
+  --transicion: 160ms ease;
+}
