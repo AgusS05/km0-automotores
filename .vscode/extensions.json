@@ -1,0 +1,12 @@
+{
+  // VS Code sugiere instalar estas extensiones al abrir el proyecto
+  "recommendations": [
+    "anthropic.claude-code",
+    "vscjava.vscode-java-pack",
+    "vmware.vscode-boot-dev-pack",
+    "vitest.explorer",
+    "oxc.oxc-vscode",
+    "ms-azuretools.vscode-docker",
+    "bierner.markdown-mermaid"
+  ]
+}

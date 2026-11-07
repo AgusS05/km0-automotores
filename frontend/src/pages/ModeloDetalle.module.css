@@ -1,0 +1,59 @@
+.pagina { padding-top: var(--e-5); }
+.migas { display: flex; flex-wrap: wrap; gap: var(--e-2); font-size: var(--t-sm); color: var(--c-texto-2); margin-bottom: var(--e-4); }
+.principal { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: var(--e-6); align-items: start; }
+
+.pestanas { display: flex; gap: var(--e-1); border-bottom: 1px solid var(--c-linea); margin-bottom: var(--e-3); }
+.pestana {
+  background: none; border: 0; padding: var(--e-2) var(--e-4); cursor: pointer;
+  font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; color: var(--c-texto-2);
+  border-bottom: 3px solid transparent; margin-bottom: -1px;
+}
+.pestana[aria-selected='true'] { color: var(--c-asfalto); border-bottom-color: var(--c-patente); }
+.pestana:disabled { cursor: default; opacity: 0.5; }
+.cuenta { font-family: var(--f-texto); font-size: var(--t-xs); color: var(--c-texto-2); margin-left: 2px; }
+
+.galeria { display: grid; gap: var(--e-2); }
+.fotoPrincipal { border-radius: var(--r-m); }
+.miniaturas { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--e-2); }
+.miniatura {
+  padding: 0; border: 2px solid transparent; border-radius: var(--r-s); overflow: hidden; cursor: pointer; background: none;
+  opacity: 0.7;
+}
+.miniatura[aria-pressed='true'] { border-color: var(--c-patente); opacity: 1; }
+.miniatura:hover { opacity: 1; }
+.credito { font-size: var(--t-xs); color: var(--c-texto-2); }
+
+.vista3d { display: grid; gap: var(--e-3); }
+.barra3d { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-3); }
+.nota3d { font-size: var(--t-xs); color: var(--c-texto-2); max-width: 44ch; }
+
+.resumen { display: grid; gap: var(--e-2); position: sticky; top: calc(var(--alto-header) + var(--e-4)); }
+.marca { color: var(--c-texto-2); font-weight: 500; }
+.nombre { font-size: clamp(2.6rem, 5vw, 3.8rem); line-height: 0.95; }
+.tipo { color: var(--c-texto-2); }
+.precio { font-family: var(--f-display); font-size: var(--t-xl); font-weight: 600; margin-top: var(--e-2); color: var(--c-asfalto); }
+.precio span { font-family: var(--f-texto); font-size: var(--t-base); font-weight: 400; color: var(--c-texto-2); }
+.descripcion { margin-top: var(--e-2); max-width: 60ch; }
+.colores { margin-top: var(--e-3); display: grid; gap: var(--e-2); }
+.etiqueta { font-size: var(--t-sm); font-weight: 600; }
+.acciones { display: flex; flex-wrap: wrap; gap: var(--e-3); margin-top: var(--e-4); }
+
+.bloque { margin-top: var(--e-8); display: grid; gap: var(--e-4); }
+.version { font-weight: 600; white-space: nowrap; }
+.num { text-align: right; white-space: nowrap; }
+.aclaracion { font-size: var(--t-sm); color: var(--c-texto-2); }
+.sucursales { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-3); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.sucursales li {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: var(--e-3);
+  padding: var(--e-4); background: var(--c-papel); border: 1px solid var(--c-linea); border-radius: var(--r-m);
+}
+.sucursales h3 { font-size: var(--t-md); margin-bottom: var(--e-1); }
+.sucursales p { font-size: var(--t-sm); }
+.horario { color: var(--c-texto-2); }
+
+@media (max-width: 900px) {
+  .principal { grid-template-columns: 1fr; }
+  .resumen { position: static; }
+}
+
+.linkComprar { white-space: nowrap; font-size: var(--t-sm); font-weight: 600; }

@@ -1,0 +1,53 @@
+.pagina { padding-top: var(--e-6); display: grid; gap: var(--e-4); max-width: 900px; }
+.barra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-3); }
+.botones { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-2); }
+
+/* La hoja: se ve como un documento y se imprime igual */
+.hoja {
+  display: grid; gap: var(--e-6);
+  padding: var(--e-7) var(--e-7) var(--e-6);
+  background: var(--c-papel); border-radius: var(--r-m); border-top: 6px solid var(--c-asfalto);
+  box-shadow: 0 1px 2px rgba(28, 36, 48, 0.08);
+}
+.hoja h2 { font-size: var(--t-md); margin-bottom: var(--e-2); color: var(--c-asfalto); }
+.chico { font-size: var(--t-sm); color: var(--c-texto-2); }
+
+.membrete { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--e-4); padding-bottom: var(--e-5); border-bottom: 2px dashed var(--c-linea); }
+.marca { font-family: var(--f-display); font-size: var(--t-xl); font-weight: 700; color: var(--c-asfalto); line-height: 1; }
+.numero { display: grid; justify-items: end; gap: var(--e-1); text-align: right; }
+.numero h1 { font-size: var(--t-lg); }
+
+.partes { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-5); }
+.partes p { font-size: var(--t-sm); }
+
+.vehiculo { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: var(--e-5); align-items: start; }
+.foto { border-radius: var(--r-s); }
+.nombreAuto { font-family: var(--f-display); font-size: var(--t-xl); font-weight: 700; line-height: 1.1; }
+.ficha { margin: var(--e-3) 0 0; display: grid; gap: var(--e-1); font-size: var(--t-sm); }
+.ficha div { display: grid; grid-template-columns: 110px 1fr; gap: var(--e-2); }
+.ficha dt { color: var(--c-texto-2); }
+.ficha dd { margin: 0; }
+.muestra { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--c-linea); margin-right: var(--e-1); vertical-align: -1px; }
+
+.cuentas { width: 100%; border-collapse: collapse; font-size: var(--t-base); font-variant-numeric: tabular-nums; }
+.cuentas th { text-align: left; font-weight: 400; color: var(--c-texto-2); padding: var(--e-2) 0; border-bottom: 1px solid var(--c-hormigon-2); }
+.cuentas td { text-align: right; padding: var(--e-2) 0 var(--e-2) var(--e-4); border-bottom: 1px solid var(--c-hormigon-2); }
+.total th { color: var(--c-asfalto); font-weight: 600; }
+.total td { font-family: var(--f-display); font-size: var(--t-lg); font-weight: 700; color: var(--c-patente); }
+.comentario { margin-top: var(--e-3); font-size: var(--t-sm); }
+
+.pasos { margin: 0; padding-left: var(--e-5); display: grid; gap: var(--e-1); font-size: var(--t-sm); }
+.legal { font-size: var(--t-xs); color: var(--c-texto-2); border-top: 1px solid var(--c-linea); padding-top: var(--e-3); }
+
+@media (max-width: 700px) {
+  .hoja { padding: var(--e-5) var(--e-4); }
+  .partes, .vehiculo { grid-template-columns: 1fr; }
+  .numero { justify-items: start; text-align: left; }
+}
+
+@media print {
+  .pagina { padding: 0; max-width: none; margin: 0; }
+  .hoja { padding: 14mm 16mm 10mm; border: 0; border-radius: 0; box-shadow: none; gap: var(--e-5); }
+  .vehiculo { grid-template-columns: 220px minmax(0, 1fr); }
+  .partes { grid-template-columns: 1fr 1fr; }
+}

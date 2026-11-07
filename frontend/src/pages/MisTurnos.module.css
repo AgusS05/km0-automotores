@@ -1,0 +1,15 @@
+.pagina { padding-top: var(--e-6); }
+.encabezado { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--e-4); margin-bottom: var(--e-6); }
+.acciones { display: flex; flex-wrap: wrap; gap: var(--e-3); }
+.seccion { display: grid; gap: var(--e-4); margin-top: var(--e-6); }
+.lista { display: grid; gap: var(--e-3); grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.historial summary { cursor: pointer; font-weight: 600; color: var(--c-patente); padding: var(--e-2) 0; }
+.historial[open] summary { margin-bottom: var(--e-3); }
+@media (max-width: 420px) { .lista { grid-template-columns: 1fr; } }
+.solicitud {
+  display: grid; gap: var(--e-2); justify-items: start; padding: var(--e-4);
+  background: var(--c-papel); border: 1px solid var(--c-linea); border-radius: var(--r-m); border-left: 4px solid var(--c-patente);
+}
+.cabeceraSolicitud { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-2); width: 100%; }
+.cabeceraSolicitud h3 { font-size: var(--t-md); }
+.detalleSolicitud { font-size: var(--t-sm); color: var(--c-texto-2); }

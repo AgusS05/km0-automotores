@@ -1,0 +1,68 @@
+.layout { padding-top: var(--e-5); }
+.subnav {
+  display: flex; gap: var(--e-1); overflow-x: auto; overflow-y: hidden; /* sin esto Windows muestra una barra vertical de 1 px */
+  border-bottom: 1px solid var(--c-linea); margin-bottom: var(--e-5);
+}
+.sublink {
+  padding: var(--e-2) var(--e-3); text-decoration: none; color: var(--c-texto-2); font-weight: 500; white-space: nowrap;
+  border-bottom: 3px solid transparent; margin-bottom: -1px;
+}
+.sublink:hover { color: var(--c-asfalto); }
+.subactivo { color: var(--c-asfalto); border-bottom-color: var(--c-patente); }
+
+.seccion { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--e-5); } /* minmax: las tablas anchas scrollean adentro en vez de estirar la página */
+.tituloConSelector { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-4); }
+.barraTitulo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-3); }
+.segmentado { display: inline-flex; border: 1px solid var(--c-linea); border-radius: var(--r-s); overflow: hidden; background: var(--c-papel); }
+.segmentado button { border: 0; background: none; padding: var(--e-2) var(--e-3); cursor: pointer; font-size: var(--t-sm); }
+.segmentado button + button { border-left: 1px solid var(--c-linea); }
+.segmentado button[aria-pressed='true'] { background: var(--c-asfalto); color: #fff; }
+
+.indicadores { margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--e-3); }
+.indicadores > div { padding: var(--e-4); background: var(--c-papel); border-radius: var(--r-m); border: 1px solid var(--c-linea); display: grid; align-content: start; gap: 2px; }
+.indicadores dt { font-size: var(--t-sm); color: var(--c-texto-2); }
+.indicadores dd { margin: 0; font-family: var(--f-display); font-size: var(--t-2xl); font-weight: 700; line-height: 1.1; color: var(--c-asfalto); font-variant-numeric: tabular-nums; }
+.indicadorAlerta { border-color: #e0a800 !important; background: var(--c-alerta-claro) !important; }
+.aclaracion { font-size: var(--t-xs); color: var(--c-texto-2); }
+
+.paneles { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-4); }
+.panel { padding: var(--e-5); background: var(--c-papel); border-radius: var(--r-m); border: 1px solid var(--c-linea); display: grid; gap: var(--e-3); align-content: start; }
+.panel h2 { font-size: var(--t-md); }
+.segundoTitulo { margin-top: var(--e-4); }
+.apilada { display: flex; height: 22px; border-radius: 3px; overflow: hidden; gap: 2px; }
+.leyenda { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--e-2) var(--e-4); font-size: var(--t-sm); }
+.leyenda li { display: flex; align-items: center; gap: var(--e-1); }
+.leyenda li > span { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+/* Reservas */
+.filtros { display: grid; gap: var(--e-3); padding: var(--e-4); background: var(--c-papel); border: 1px solid var(--c-linea); border-radius: var(--r-m); }
+.atajos { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-1); font-size: var(--t-sm); color: var(--c-texto-2); }
+.cuando { white-space: nowrap; }
+.desplazable { justify-self: start; max-width: 100%; overflow-x: auto; }
+.desplazable button { white-space: nowrap; }
+.etiquetaTipo { display: block; font-size: var(--t-xs); font-weight: 600; color: var(--c-patente); text-transform: none; }
+
+/* ABM */
+.formulario {
+  display: grid; gap: var(--e-3); padding: var(--e-5);
+  background: var(--c-papel); border-radius: var(--r-m); border-top: 4px solid var(--c-patente);
+}
+.formulario h2 { font-size: var(--t-lg); }
+.campos { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--e-3); }
+.campoAncho { grid-column: 1 / -1; }
+.botones { display: flex; flex-wrap: wrap; gap: var(--e-2); }
+.check { display: flex; align-items: center; gap: var(--e-2); min-height: 44px; }
+.check input { width: 18px; height: 18px; accent-color: var(--c-patente); }
+.acciones { display: flex; flex-wrap: wrap; gap: var(--e-1); }
+/* En una celda tiene que seguir siendo celda: con display:flex se desalineaban las filas de la tabla */
+td.acciones { display: table-cell; white-space: nowrap; }
+td.acciones > * + * { margin-left: var(--e-1); }
+.muestra { display: inline-block; width: 18px; height: 18px; border-radius: 50%; vertical-align: middle; border: 1px solid var(--c-linea); margin-right: var(--e-2); }
+.miniatura { width: 96px; border-radius: var(--r-s); }
+.sub { display: block; font-size: var(--t-xs); color: var(--c-texto-2); }
+.inactivo td { color: #9aa3ad; }
+
+@media (max-width: 900px) {
+  .indicadores { grid-template-columns: 1fr 1fr; }
+  .paneles { grid-template-columns: 1fr; }
+}

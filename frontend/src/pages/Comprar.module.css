@@ -1,0 +1,18 @@
+.opciones { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--e-2); }
+.precioOpcion { margin-top: var(--e-1); font-family: var(--f-display); font-size: var(--t-md); font-weight: 700; color: var(--c-asfalto) !important; }
+.financiacion {
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--e-4); align-items: start;
+  padding: var(--e-4); background: var(--c-hormigon); border-radius: var(--r-s);
+}
+.financiacion input[type='range'] { padding: 0; min-height: 32px; border: 0; background: transparent; accent-color: var(--c-patente); box-shadow: none; }
+.valorAnticipo { font-family: var(--f-display); font-size: var(--t-lg); font-weight: 700; color: var(--c-asfalto); }
+.valorAnticipo small { font-family: var(--f-texto); font-size: var(--t-sm); font-weight: 400; color: var(--c-texto-2); }
+.check { display: flex; align-items: center; gap: var(--e-2); min-height: 44px; font-weight: 500; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--c-patente); }
+.muestra {
+  display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: var(--e-1);
+  border: 1px solid var(--c-linea); vertical-align: -1px;
+}
+.destacado dt { color: var(--c-asfalto) !important; font-weight: 600; }
+.destacado dd { font-family: var(--f-display); font-size: var(--t-lg); color: var(--c-patente); }
+@media (max-width: 560px) { .financiacion { grid-template-columns: 1fr; } }

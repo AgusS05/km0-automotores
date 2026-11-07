@@ -1,0 +1,2 @@
+.nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--e-2); }
+.rango { font-weight: 600; min-width: 22ch; text-align: center; }

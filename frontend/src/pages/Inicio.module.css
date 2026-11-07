@@ -1,0 +1,96 @@
+.hero {
+  background:
+    radial-gradient(ellipse 60% 80% at 75% 30%, #ffffff 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(180deg, #f4f6f8 0%, var(--c-hormigon) 100%);
+  padding-bottom: var(--e-5);
+  border-bottom: 1px solid var(--c-linea);
+}
+.heroGrilla {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: center;
+  gap: var(--e-5);
+  padding-top: var(--e-7);
+}
+.heroTexto { display: grid; gap: var(--e-5); align-content: center; }
+.titular {
+  font-size: clamp(3rem, 6.4vw, 5.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+}
+.bajada { font-size: 1.125rem; color: var(--c-texto-2); max-width: 46ch; }
+.acciones { display: flex; flex-wrap: wrap; gap: var(--e-3); }
+
+.showroom { display: grid; gap: var(--e-3); min-height: 380px; align-content: center; }
+.visor { height: clamp(300px, 36vw, 470px); }
+.ficha {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--e-4);
+  padding: var(--e-3) var(--e-2) 0;
+  border-top: 1px solid var(--c-linea);
+}
+.fichaMarca { font-size: var(--t-sm); color: var(--c-texto-2); }
+.fichaNombre { font-family: var(--f-display); font-size: var(--t-xl); font-weight: 700; line-height: 1; color: var(--c-asfalto); }
+.fichaPrecio { font-size: var(--t-sm); color: var(--c-texto-2); margin-top: 2px; }
+.fichaLink { font-weight: 600; }
+
+.selectorModelo { display: flex; flex-wrap: wrap; gap: var(--e-2); padding-top: var(--e-4); }
+.chip {
+  border: 1px solid var(--c-linea); background: var(--c-papel); color: var(--c-asfalto);
+  padding: var(--e-1) var(--e-3); border-radius: var(--r-s); cursor: pointer; font-weight: 500;
+}
+.chip:hover { border-color: var(--c-asfalto); }
+.chip[aria-pressed='true'] { background: var(--c-asfalto); border-color: var(--c-asfalto); color: #fff; }
+
+.seccion { padding-top: var(--e-8); }
+.encabezadoSeccion { display: flex; align-items: baseline; justify-content: space-between; gap: var(--e-4); }
+.tituloSeccion { font-size: var(--t-2xl); margin-bottom: var(--e-5); }
+
+.marcas {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  border-top: 2px solid var(--c-asfalto);
+}
+.marca {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: var(--e-4) var(--e-3) var(--e-4) 0;
+  text-decoration: none; color: var(--c-asfalto);
+}
+.marcaNombre { font-family: var(--f-display); font-size: var(--t-xl); font-weight: 700; line-height: 1; }
+.marcaCantidad { font-size: var(--t-sm); color: var(--c-texto-2); }
+.marca:hover .marcaNombre { color: var(--c-patente); text-decoration: underline; text-decoration-thickness: 2px; }
+
+.grilla { display: grid; gap: var(--e-5); grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+
+.pasos {
+  list-style: none; margin: 0; padding: 0; counter-reset: paso;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e-5);
+}
+.pasos li { counter-increment: paso; display: grid; gap: var(--e-2); padding-top: var(--e-4); border-top: 2px solid var(--c-linea); }
+.pasos li::before {
+  content: counter(paso);
+  font-family: var(--f-display); font-weight: 700; font-size: var(--t-2xl); line-height: 1; color: var(--c-patente);
+}
+.pasos h3 { font-size: var(--t-lg); }
+.pasos p { color: var(--c-texto-2); max-width: 38ch; }
+
+.escuela {
+  margin-top: var(--e-8);
+  /* pegada al pie: la línea de ruta del pie queda como borde entre ambas */
+  margin-bottom: calc(-1 * var(--e-8));
+  background: var(--c-asfalto);
+  color: #fff;
+}
+.escuelaGrilla {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--e-5);
+  padding-block: var(--e-7);
+}
+.escuelaTitulo { color: #fff; font-size: var(--t-2xl); max-width: 22ch; }
+.escuelaTexto { color: #c7ced6; margin-top: var(--e-3); max-width: 56ch; }
+
+@media (max-width: 900px) {
+  .heroGrilla { grid-template-columns: 1fr; padding-top: var(--e-6); }
+  .showroom { min-height: 0; }
+  .visor { height: 300px; }
+  .marcas { grid-template-columns: repeat(2, 1fr); }
+  .pasos { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,17 @@
+.tira {
+  display: flex; gap: var(--e-2);
+  overflow-x: auto; padding: var(--e-1) var(--e-1) var(--e-3);
+  scroll-snap-type: x proximity;
+}
+.dia {
+  flex: 0 0 auto; width: 64px;
+  display: grid; justify-items: center; gap: 0;
+  padding: var(--e-2) 0;
+  background: var(--c-papel); border: 1px solid var(--c-linea); border-radius: var(--r-s);
+  cursor: pointer; scroll-snap-align: start;
+}
+.dia:hover:not(:disabled) { border-color: var(--c-asfalto); }
+.dia[aria-checked='true'] { background: var(--c-asfalto); border-color: var(--c-asfalto); color: #fff; }
+.dia:disabled { cursor: not-allowed; background: transparent; color: #9aa3ad; border-style: dashed; }
+.nombre { font-size: var(--t-xs); text-transform: capitalize; }
+.numero { font-family: var(--f-display); font-size: 1.35rem; font-weight: 700; line-height: 1.1; }

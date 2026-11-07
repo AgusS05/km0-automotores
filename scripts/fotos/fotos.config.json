@@ -1,0 +1,837 @@
+{
+  "_ayuda": "Configuración de descargar-fotos.mjs. 'archivos': fotos elegidas a mano (se usan primero, si existen y tienen licencia libre). 'descartar': fotos que no van. 'requerido': palabras que tiene que tener el nombre del archivo (con | se separan alternativas). 'preferir' suma puntos y 'excluir' descarta (generaciones viejas, otras versiones). 'anioMinimo' (general o por modelo) descarta archivos cuyo nombre menciona un año anterior: así no entran generaciones viejas. 'busqueda' puede ser una lista de textos para buscar de varias formas. 'propias': fotos que no son de Wikimedia, copiadas a mano a frontend/public/fotos ({archivo, autor, licencia, fuente}); van primero. 'cantidad' cambia las 3 fotos de un modelo.",
+  "cantidadPorModelo": 3,
+  "anchoMinimo": 1280,
+  "anioMinimo": 2016,
+  "excluirSiempre": [
+    "interior",
+    "dashboard",
+    "cockpit",
+    "engine",
+    "motor",
+    "badge",
+    "emblem",
+    "logo",
+    "wheel",
+    "rim",
+    "seat",
+    "trunk",
+    "boot",
+    "taillight",
+    "tail light",
+    "headlight",
+    "lamp",
+    "detail",
+    "steering",
+    "console",
+    "gauge",
+    "key",
+    "toy",
+    "model car",
+    "diecast",
+    "miniature",
+    "police",
+    "polícia",
+    "policia",
+    "taxi",
+    "ambulance",
+    "crash",
+    "accident",
+    "wreck",
+    "race",
+    "racing",
+    "rally",
+    "tuning",
+    "modified",
+    "drift",
+    "safari",
+    "concept",
+    "prototype",
+    "sketch",
+    "drawing",
+    "render",
+    "logo",
+    "screenshot",
+    "plate",
+    "nameplate",
+    "grille",
+    "mirror",
+    "door",
+    "pedal",
+    "shifter",
+    "pm",
+    "viatura",
+    "patrulhamento",
+    "patrulha",
+    "policial",
+    "pmesp",
+    "pmerj",
+    "pmmg",
+    "prf",
+    "brigada",
+    "bombeiros",
+    "militar",
+    "military",
+    "army",
+    "exército",
+    "exercito",
+    "gendarmeria",
+    "gendarmería",
+    "prefectura",
+    "sheriff",
+    "patrol",
+    "mecum",
+    "auction",
+    "auctions",
+    "barrett-jackson",
+    "classic",
+    "vintage",
+    "itasha",
+    "anime",
+    "attack on titan",
+    "wrap",
+    "wrapped",
+    "cropped"
+  ],
+  "modelos": [
+    {
+      "slug": "toyota-corolla",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "busqueda": "Toyota Corolla E210",
+      "requerido": [
+        "corolla"
+      ],
+      "preferir": [
+        "E210",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "hybrid",
+        "hybride",
+        "sedan"
+      ],
+      "excluir": [
+        "cross",
+        "hatchback",
+        "touring",
+        "E170",
+        "E160",
+        "E150",
+        "E140",
+        "E120",
+        "altis 2014",
+        "wagon"
+      ],
+      "archivos": [
+        "Toyota Corolla sedan E210 hydrid.jpg",
+        "TOYOTA COROLLA SEDAN (E210) China (9).jpg",
+        "18 Toyota Corolla (E210) back.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "toyota-corolla-cross",
+      "marca": "Toyota",
+      "modelo": "Corolla Cross",
+      "busqueda": "Toyota Corolla Cross",
+      "requerido": [
+        "corolla cross|corolla_cross"
+      ],
+      "preferir": [
+        "hybrid",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "XG10"
+      ],
+      "excluir": [],
+      "archivos": [
+        "Toyota Corolla Cross Hybrid 1X7A6348.jpg",
+        "2020 Toyota Corolla Cross - Front.jpg",
+        "2020 Toyota Corolla Cross - Rear.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "toyota-hilux",
+      "marca": "Toyota",
+      "modelo": "Hilux",
+      "busqueda": "Toyota Hilux AN120 double cab",
+      "requerido": [
+        "hilux"
+      ],
+      "preferir": [
+        "GR",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "revo",
+        "AN120",
+        "AN130",
+        "double"
+      ],
+      "excluir": [
+        "N70",
+        "N80",
+        "surf",
+        "4runner",
+        "single cab",
+        "1990",
+        "1985",
+        "1998",
+        "2005"
+      ],
+      "archivos": [
+        "Toyota HiLux GR Sport 1X7A7281.jpg",
+        "Toyota Hilux 2.8 GR Sport 4x4 2024 (1).jpg",
+        "2021 Toyota Hilux Revo GR Sport Double-Cab 2.8 4x4.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "toyota-yaris",
+      "marca": "Toyota",
+      "modelo": "Yaris",
+      "busqueda": "Toyota Yaris hatchback 2023",
+      "requerido": [
+        "yaris"
+      ],
+      "preferir": [
+        "2023",
+        "2024",
+        "2022",
+        "ativ",
+        "premium",
+        "XP150"
+      ],
+      "excluir": [
+        "cross",
+        "GR Yaris",
+        "GR-Yaris",
+        "verso",
+        "XP10",
+        "XP90",
+        "1999",
+        "2006",
+        "2011",
+        "gazoo"
+      ],
+      "archivos": [
+        "2023 Toyota Yaris Premium.jpg",
+        "2023 Toyota Yaris Premium S.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "vw-amarok",
+      "marca": "Volkswagen",
+      "modelo": "Amarok",
+      "busqueda": "Volkswagen Amarok 2023",
+      "requerido": [
+        "amarok"
+      ],
+      "preferir": [
+        "II",
+        "Mk2",
+        "2023",
+        "2024",
+        "2025",
+        "V6"
+      ],
+      "excluir": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "mk1",
+        "first generation"
+      ],
+      "archivos": [
+        "Volkswagen Amarok Mk2 1X7A0807.jpg",
+        "Volkswagen Amarok Mk2 1X7A0808.jpg",
+        "Volkswagen Amarok II V6 1X7A7384.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "vw-taos",
+      "marca": "Volkswagen",
+      "modelo": "Taos",
+      "busqueda": "Volkswagen Taos",
+      "requerido": [
+        "taos"
+      ],
+      "preferir": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "excluir": [
+        "tharu"
+      ],
+      "archivos": [
+        "Volkswagen Taos 1X7A6748.jpg",
+        "Volkswagen Taos 1X7A6750.jpg",
+        "2022 Volkswagen Taos 1.5T SE in Cornflower Blue, front left.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "vw-t-cross",
+      "marca": "Volkswagen",
+      "modelo": "T-Cross",
+      "busqueda": "Volkswagen T-Cross",
+      "requerido": [
+        "t-cross|tcross|t cross"
+      ],
+      "preferir": [
+        "2023",
+        "2024",
+        "2025",
+        "facelift"
+      ],
+      "excluir": [
+        "concept"
+      ],
+      "archivos": [
+        "Volkswagen T-Cross (2023) 1X7A1967.jpg",
+        "Volkswagen T-Cross (2023) 1X7A2499.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "vw-polo",
+      "marca": "Volkswagen",
+      "modelo": "Polo",
+      "busqueda": "Volkswagen Polo VI",
+      "requerido": [
+        "polo"
+      ],
+      "preferir": [
+        "VI",
+        "Mk6",
+        "AW",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "track"
+      ],
+      "excluir": [
+        "Mk1",
+        "Mk2",
+        "Mk3",
+        "Mk4",
+        "Mk5",
+        "6R",
+        "9N",
+        "86C",
+        "sedan",
+        "vento",
+        "virtus",
+        "classic",
+        "GTI R5",
+        "WRC",
+        "rally"
+      ],
+      "archivos": [
+        "Volkswagen Polo VI (2021) IMG 5700.jpg",
+        "Volkswagen Polo VI (2021) IMG 5732.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "audi-a3-sedan",
+      "marca": "Audi",
+      "modelo": "A3 Sedan",
+      "busqueda": "Audi A3 Sedan 8Y",
+      "requerido": [
+        "a3",
+        "sedan|limousine|saloon|8Y"
+      ],
+      "preferir": [
+        "8Y",
+        "sedan",
+        "limousine",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "excluir": [
+        "8V",
+        "8P",
+        "8L",
+        "sportback",
+        "cabriolet",
+        "RS3 sportback"
+      ],
+      "archivos": [
+        "2024 Audi A3 8Y Sedan IMG 1019.jpg",
+        "Audi A3 8Y Sedan IMG 5936.jpg",
+        "Audi A3 8Y Sedan IMG 4928.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "audi-q3",
+      "marca": "Audi",
+      "modelo": "Q3",
+      "busqueda": "Audi Q3 F3",
+      "requerido": [
+        "q3"
+      ],
+      "preferir": [
+        "F3",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "excluir": [
+        "8U",
+        "sportback",
+        "2012",
+        "2015"
+      ],
+      "archivos": [
+        "Audi Q3 F3 DSC 7497.jpg",
+        "Audi Q3 F3 white (1).jpg",
+        "2019 Audi Q3 S Line 45 TFSi Quattro 2.0 Front.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "bmw-serie-3",
+      "marca": "BMW",
+      "modelo": "Serie 3",
+      "busqueda": "BMW 3 Series G20",
+      "requerido": [
+        "bmw",
+        "g20|330i|320i|330e|320d|318i|3 series|3er"
+      ],
+      "preferir": [
+        "330i",
+        "320i",
+        "2019",
+        "2020",
+        "2022",
+        "2023",
+        "LCI"
+      ],
+      "excluir": [
+        "G21",
+        "touring",
+        "E90",
+        "F30",
+        "E46",
+        "M3"
+      ],
+      "archivos": [
+        "BMW G20 330i in blue.jpg",
+        "2019 BMW 330i M Sport 2.0 Front.jpg",
+        "BMW 330i G20 Black 3.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "bmw-x1",
+      "marca": "BMW",
+      "modelo": "X1",
+      "busqueda": "BMW X1 U11",
+      "requerido": [
+        "x1"
+      ],
+      "preferir": [
+        "U11",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "excluir": [
+        "E84",
+        "F48"
+      ],
+      "archivos": [
+        "BMW U11 1X7A6187.jpg",
+        "BMW X1 xDrive20i (U11) rear.jpg",
+        "2023-02 BMW U11-X1 s18d blue-green.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "chevrolet-onix",
+      "marca": "Chevrolet",
+      "modelo": "Onix",
+      "busqueda": "Chevrolet Onix second generation",
+      "requerido": [
+        "onix"
+      ],
+      "preferir": [
+        "II",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "second",
+        "premier",
+        "RS"
+      ],
+      "excluir": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "first",
+        "plus",
+        "sedan"
+      ],
+      "archivos": [
+        "Chevrolet Onix II front Brazil.jpg",
+        "Chevrolet Onix (second generation, front view).jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "chevrolet-tracker",
+      "marca": "Chevrolet",
+      "modelo": "Tracker",
+      "busqueda": "Chevrolet Tracker 2021",
+      "requerido": [
+        "tracker"
+      ],
+      "preferir": [
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "premier",
+        "RS"
+      ],
+      "excluir": [
+        "geo",
+        "1990",
+        "1995",
+        "1999",
+        "2004",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "trax"
+      ],
+      "archivos": [
+        "2022 Chevrolet Tracker 1.2 Turbo LS.jpg",
+        "Chevrolet Tracker 2021 (rear).png",
+        "Chevrolet Tracker, Front Right, 05-12-2021.jpg"
+      ],
+      "descartar": [
+        "2003 Chevrolet Tracker ZR2, front left, 5-15-2021.jpg"
+      ],
+      "anioMinimo": 2020
+    },
+    {
+      "slug": "chevrolet-s10",
+      "marca": "Chevrolet",
+      "modelo": "S10",
+      "busqueda": [
+        "Chevrolet S10",
+        "Chevrolet S10 High Country",
+        "Chevrolet S10 LTZ",
+        "Chevrolet S10 2.8"
+      ],
+      "requerido": [
+        "s10"
+      ],
+      "preferir": [
+        "high country",
+        "2025",
+        "2024",
+        "2023",
+        "2022",
+        "2021",
+        "LTZ",
+        "Z71",
+        "front"
+      ],
+      "excluir": [
+        "1982",
+        "1994",
+        "1995",
+        "1998",
+        "2000",
+        "2001",
+        "2004",
+        "blazer",
+        "xtreme",
+        "max",
+        "lowrider",
+        "pickup, 1st",
+        "s-10 blazer"
+      ],
+      "archivos": [
+        "Brazilian 2012 All-New Chevy S10.jpg"
+      ],
+      "descartar": [
+        "1987 Chevrolet S10 Pickup, Mecum Auctions Kissimmee 2024.jpg",
+        "Chevrolet S10 do Patrulhamento Rural PM-GO 2.jpg"
+      ],
+      "anioMinimo": 2012,
+      "cantidad": 2,
+      "propias": [
+        {
+          "archivo": "chevrolet-s10-prensa-1.jpg",
+          "autor": "Chevrolet",
+          "licencia": "foto de prensa"
+        }
+      ]
+    },
+    {
+      "slug": "toyota-sw4",
+      "marca": "Toyota",
+      "modelo": "SW4",
+      "busqueda": "Toyota Fortuner AN160",
+      "requerido": [
+        "fortuner|sw4"
+      ],
+      "preferir": [
+        "AN160",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "GR",
+        "legender",
+        "facelift"
+      ],
+      "excluir": [
+        "AN50",
+        "AN60",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014"
+      ],
+      "archivos": [
+        "Toyota Fortuner (AN160) Front.jpg",
+        "2021 Toyota Fortuner SRZ 2.7 4x2 (Indonesia) front view 01.jpg",
+        "Toyota Fortuner (AN160) rear.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "audi-a5-sportback",
+      "marca": "Audi",
+      "modelo": "A5 Sportback",
+      "busqueda": "Audi A5 Sportback",
+      "requerido": [
+        "a5|s5"
+      ],
+      "preferir": [
+        "sportback",
+        "B10",
+        "2024",
+        "2025",
+        "F5",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "excluir": [
+        "cabriolet",
+        "coupe",
+        "coupé",
+        "avant",
+        "8T",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "RS5",
+        "RS 5"
+      ],
+      "archivos": [
+        "Audi A5 Sportback F5 FL IMG 6127.jpg",
+        "AUDI A5 SPORTBACK F5 China.jpg",
+        "AUDI A5 SPORTBACK F5 China (2).jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "mercedes-benz-clase-c",
+      "marca": "Mercedes-Benz",
+      "modelo": "Clase C",
+      "busqueda": "Mercedes-Benz W206",
+      "requerido": [
+        "w206|c-class|c-klasse|c200|c300|c 200|c 300"
+      ],
+      "preferir": [
+        "W206",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "limousine",
+        "sedan",
+        "avantgarde"
+      ],
+      "excluir": [
+        "W205",
+        "W204",
+        "W203",
+        "W202",
+        "S206",
+        "S205",
+        "estate",
+        "t-modell",
+        "coupe",
+        "coupé",
+        "cabriolet",
+        "C 63",
+        "C63",
+        "all-terrain"
+      ],
+      "archivos": [
+        "2024 Mercedes-Benz W206 C180 Avantgarde in Mojave Silver, front right, 07-10-2024.jpg",
+        "2024 Mercedes-Benz W206 C180 Avantgarde in Mojave Silver, rear right, 07-10-2024.jpg",
+        "Mercedes-Benz W206 IMG 5796.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "mercedes-benz-gla",
+      "marca": "Mercedes-Benz",
+      "modelo": "GLA",
+      "busqueda": "Mercedes-Benz GLA H247",
+      "requerido": [
+        "gla"
+      ],
+      "preferir": [
+        "H247",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "excluir": [
+        "X156",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "GLA 45",
+        "GLA45"
+      ],
+      "archivos": [
+        "Mercedes-Benz GLA 200d 4MATIC (H247) front.jpg",
+        "Mercedes-AMG GLA 35 4MATIC (H247) Auto Zuerich 2021 IMG 0269.jpg",
+        "Mercedes-Benz GLA 200 d 4MATIC Night Edition (H247) front.jpg"
+      ],
+      "descartar": [
+        "The frontview of Mercedes-Benz GLA 200d 4MATIC (H247) ver. Attack on Titan.jpg"
+      ]
+    },
+    {
+      "slug": "mercedes-benz-glc",
+      "marca": "Mercedes-Benz",
+      "modelo": "GLC",
+      "busqueda": "Mercedes-Benz GLC X254",
+      "requerido": [
+        "glc"
+      ],
+      "preferir": [
+        "X254",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "excluir": [
+        "X253",
+        "C253",
+        "C254",
+        "coupe",
+        "coupé",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "GLC 63",
+        "GLC63"
+      ],
+      "archivos": [
+        "Mercedes-Benz GLC 220 d 4MATIC (X254) front.jpg",
+        "2023 Mercedes-Benz GLC-Class GLC220d 4MATIC Avantgarde.jpg",
+        "Mercedes-Benz GLC 220d 4MATIC (X254) front.jpg"
+      ],
+      "descartar": []
+    },
+    {
+      "slug": "volkswagen-virtus",
+      "marca": "Volkswagen",
+      "modelo": "Virtus",
+      "busqueda": "Volkswagen Virtus",
+      "requerido": [
+        "virtus"
+      ],
+      "preferir": [
+        "2023",
+        "2024",
+        "2025",
+        "2022",
+        "GTS",
+        "exclusive",
+        "highline"
+      ],
+      "excluir": [],
+      "archivos": [
+        "2023 Volkswagen Virtus Topline front 20230520.jpg",
+        "2023 Volkswagen Virtus Topline rear 20230520.jpg",
+        "Volkswagen Virtus 1.6 MSi Trendline 2023.jpg"
+      ],
+      "descartar": [
+        "2023 Volkswagen Virtus Topline front 20230520 (cropped).jpg"
+      ]
+    }
+  ]
+}
