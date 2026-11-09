@@ -1,0 +1,52 @@
+# =====================================================================
+# Configuración de Km0 Automotores (backend)
+# Todo lo que cambia entre entornos se toma de variables de entorno,
+# con un valor por defecto pensado para desarrollo local.
+# =====================================================================
+spring:
+  application:
+    name: km0-automotores-backend
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/km0_automotores}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    open-in-view: false            # las consultas se hacen dentro de los servicios, no en la vista
+    hibernate:
+      ddl-auto: validate           # Flyway crea las tablas; Hibernate solo verifica que coincidan
+    properties:
+      hibernate:
+        default_batch_fetch_size: 50   # evita el problema N+1 al cargar relaciones perezosas
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: ${PORT:8080}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+
+app:
+  zona-horaria: America/Argentina/Cordoba
+  cors:
+    origenes-permitidos: ${CORS_ORIGINS:http://localhost:5173}
+  jwt:
+    # En producción definir JWT_SECRET con al menos 32 caracteres aleatorios.
+    secreto: ${JWT_SECRET:km0-secreto-solo-para-desarrollo-cambiar-en-produccion-2026}
+    expiracion-horas: 24
+  turnos:
+    duracion-minutos: 60            # cada test drive o clase dura 1 hora
+    anticipacion-minima-minutos: 60 # no se puede reservar algo que empieza en menos de 1 hora
+    dias-maximos-adelanto: 30       # se puede reservar hasta 30 días hacia adelante
+  compras:
+    # Valores de REFERENCIA para el presupuesto orientativo (el vendedor confirma las condiciones reales)
+    tna-referencia: 39.0            # tasa nominal anual en %, para simular el crédito prendario
+    cuotas: [12, 24, 36, 48, 60]    # plazos que se ofrecen
+    anticipo-minimo-porcentaje: 30  # hay que pagar al menos el 30 % al contado
+  notificaciones:
+    # Si es false (o no hay SMTP configurado), los recordatorios se escriben en el log.
+    email-habilitado: ${MAIL_ENABLED:false}
+    remitente: ${MAIL_FROM:no-responder@km0automotores.com.ar}
