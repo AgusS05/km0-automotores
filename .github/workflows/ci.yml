@@ -1,0 +1,54 @@
+# Integración continua: en cada push o pull request se compilan y prueban backend y frontend.
+# Si algo falla, GitHub marca el commit con una cruz roja y avisa por email.
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend (tests + cobertura)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      # "verify" corre tests unitarios y de integración (Testcontainers usa el Docker del runner)
+      # y genera el reporte de cobertura de JaCoCo.
+      - name: Compilar y probar
+        run: mvn -B verify
+      - name: Guardar reporte de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobertura-backend
+          path: backend/target/site/jacoco
+
+  frontend:
+    name: Frontend (lint + tests + build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - name: Análisis estático (oxlint)
+        run: npm run lint
+      - name: Tests (Vitest) con cobertura
+        run: npm run test:coverage
+      - name: Build de producción
+        run: npm run build

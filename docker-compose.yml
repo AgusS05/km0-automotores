@@ -1,0 +1,38 @@
+# Levanta PostgreSQL (y opcionalmente el backend) para desarrollo local.
+#   Solo la base:        docker compose up -d db
+#   Base + backend:      docker compose up -d --build
+# El frontend se corre aparte con "npm run dev" dentro de /frontend.
+services:
+  db:
+    image: postgres:16
+    container_name: km0-db
+    environment:
+      POSTGRES_DB: km0_automotores
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: America/Argentina/Cordoba
+    ports:
+      - "5432:5432"
+    volumes:
+      - km0-datos:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d km0_automotores"]
+      interval: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    container_name: km0-backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/km0_automotores
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      CORS_ORIGINS: http://localhost:5173
+    ports:
+      - "8080:8080"
+
+volumes:
+  km0-datos:
