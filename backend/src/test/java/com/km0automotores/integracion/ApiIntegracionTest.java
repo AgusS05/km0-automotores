@@ -191,8 +191,7 @@ class ApiIntegracionTest {
                             .content(json(reserva(COROLLA, CORDOBA_CENTRO, dia, hora))))
                     .andExpect(status().isCreated())
                     .andExpect(jsonPath("$.estado").value("PENDIENTE"))
-                    .andExpect(jsonPath("$.vendedor.nombre").exists())
-                    .andExpect(jsonPath("$.patente").exists())
+                    .andExpect(jsonPath("$.vendedor.nombreCompleto").exists()).andExpect(jsonPath("$.patente").exists())
                     .andReturn().getResponse().getContentAsString();
             Integer turnoId = JsonPath.read(respuesta, "$.id");
 
